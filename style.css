@@ -148,5 +148,34 @@ body {
 
 /*=====  Responsive  ======*/
 /*determiner les breakpints  les display flex directions*/
-@media (max-width: 840px) {
+@media (max-width: 950px) {
+  .container {
+    width: 90%;
+    padding: 30px 35px 40px 40px;
+  }
+}
+
+/* Interverti block*/
+@media (max-width: 820px) {
+  .container {
+    margin: 40px 0;
+    height: 100%;
+  }
+  .container .content {
+    flex-direction: column-reverse;
+  }
+  /*block en ligne*/
+  .container .content .left-side {
+    width: 100%;
+    flex-direction: row;
+    margin-top: 40px;
+    justify-content: center;
+  }
+  .container .content .left-side::before {
+    display: none;
+  }
+  .container .content .right-side {
+    width: 100%;
+    margin-left: 0;
+  }
 }
