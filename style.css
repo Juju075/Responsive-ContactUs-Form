@@ -26,19 +26,29 @@ body {
 
 /*----------  Fin ----------*/
 .container .content {
-  background: yellow;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 .container .content .left-side {
-  background: blue;
   width: 25%;
   height: 100%;
+  position: relative;
 }
 
+/*Astuce positionnement trait independent du flux sert de séparation*/
+.content .left-side::before {
+  content: "";
+  position: absolute;
+  height: 70%;
+  width: 2px;
+  /* Astuce */
+  right: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #afafb6;
+}
 .content .left-side .details {
-  background: gray;
   margin: 14px;
   text-align: center;
 }
@@ -46,6 +56,18 @@ body {
 .content .left-side .details i {
   font-size: 30px;
   color: #3e2093;
+  margin-bottom: 10px;
+}
+
+.content .left-side .details .topic {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.content .left-side .details .text-one,
+.content .left-side .details .text-two {
+  font-size: 14px;
+  color: #afafb6;
 }
 
 .content .left-side .details .topic {
@@ -53,7 +75,16 @@ body {
   font-weight: 500;
 }
 .container .content .right-side {
-  background: green;
   width: 75%;
   margin-left: 90px;
+}
+
+.container .content .right-side .topic-text {
+  font-size: 23px;
+  font-weight: 600;
+  color: #3e2093;
+}
+.content .right-side .topic-text .input-box {
+  height: 50px;
+  width: 100%;
 }
